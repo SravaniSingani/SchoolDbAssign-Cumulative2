@@ -1,0 +1,30 @@
+﻿@model IEnumerable<SchoolDbAssignmnet.Models.Teacher>
+
+@{
+    ViewBag.Title = "List";
+}
+
+
+
+<div class="teacher-list">
+    <nav style="margin-bottom:30px; overflow:hidden">
+        <a class="navlink" href="/Teacher/New">New Teacher</a>
+    </nav>
+
+    <h2>Teacher List</h2>
+    <form action="/Teacher/List" method="GET">
+        <input type="text" name="SearchKey" />
+        <input type="submit" value="Search" />
+    </form>
+
+
+
+    @{
+
+        // create a list to navigate to /teacher/show/{teacherid}
+        foreach (SchoolDbAssignmnet.Models.Teacher Teacher in Model)
+        {
+            <div class="teacher-names"><a href="/Teacher/Show/@Teacher.TeacherId"> @Teacher.TeacherName </a> </div>
+        }
+    }
+</div>

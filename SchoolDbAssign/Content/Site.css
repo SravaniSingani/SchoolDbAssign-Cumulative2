@@ -1,0 +1,61 @@
+﻿/* Set padding to keep content from hitting the edges */
+.body-content {
+    margin-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+
+nav{
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.navlink {
+    float: left;
+}
+
+.dellink {
+    color: darkred;
+    float: right;
+}
+
+.teacher-detail h2{
+    color:darkcyan;
+}
+.teacher-detail h4 {
+    color: darkslateblue;
+}
+
+.teacher-detail p{
+    color:lightslategrey;
+}
+
+
+.teacher-list{
+    padding: 20px;
+}
+.teacher-list h2 {
+        color: darkcyan;
+}
+.teacher-names{
+    padding:5px;
+    padding-left:10px;
+}
+.teacher-names a{
+    text-decoration: none;
+    color:grey;
+}
+
+.teacher-names a:hover{
+    color:darkslateblue;
+}
+
+

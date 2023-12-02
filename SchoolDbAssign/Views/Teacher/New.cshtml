@@ -1,0 +1,108 @@
+﻿
+@{
+    ViewBag.Title = "New";
+}
+
+<body>
+    <h2 id="head1">New Teacher</h2>
+
+    <form method="POST" action="/Teacher/Create" name="newteacher">
+        <div>
+            <label for="TeacherFname">First name</label>
+            <input type="text" id="TeacherFname" name="TeacherFname" />
+        </div>
+
+        <div>
+            <label for="TeacherLname">Last name</label>
+            <input type="text" id="TeacherLname" name="TeacherLname" />
+        </div>
+
+        <div>
+            <label for="EmpNumber">Employee Number</label>
+            <input type="text" id="EmpNumber" name="EmpNumber" />
+        </div>
+
+        <div>
+            <label for="Salary">Salary</label>
+            <input type="text" id="Salary" name="Salary" />
+        </div>
+
+        <div>
+            <input type="submit" value="Create Teacher" />
+        </div>
+
+    </form>
+
+    <script>
+        window.onload = function () {
+
+            var headline = document.getElementById("head1");
+            console.log("page loaded");
+
+            //  var formData to access the form from the html file
+
+            var formData = document.forms.newteacher;
+            console.log(formData);
+
+            // variables to access the user input from the form
+            // First Name
+            var fname = formData.TeacherFname;
+            // Last Name
+            var lname = formData.TeacherLname;
+            // Employee number
+            var empno = formData.EmpNumber;
+            // Salary
+            var teachersalary = formData.Salary;
+            // check the employee number with a regular expression
+            // the employee number -- T114, T234 ...
+            var regExp = /(t|T)\d{3}/;
+
+            const decimalVal = /\d+\.\d+/;
+           
+
+            // onsubmit event to call the processForm function
+            formData.onsubmit = processForm;
+
+            // function to perfom the logic on submitting the form
+            function processForm() {
+
+                console.log("process form works");
+
+                // logic to alert the user about an empty field
+                if (fname.value === "") {
+
+                     fname.style.background = "red";
+                      fname.focus();
+                   // alert("enter firstname")
+                    return false;
+                }
+
+                else if (lname.value === "") {
+
+                    lname.style.background = "red";
+                    lname.focus();
+                    return false;
+                }
+
+                // The regExp checks if the employee number is satisfied - T103, T777
+                else if (empno.value === "" || !regExp.test(empno.value)) {
+                    empno.style.background = "red";
+                    empno.focus();
+                    return false;
+                }
+
+                else if (teachersalary.value === "" || !decimalVal.test(teachersalary.value)) {
+                    teachersalary.style.background = "red";
+                    teachersalary.focus();
+                    return false;
+                }
+
+                else {
+                    return true;
+                }
+
+
+            }
+        }
+    </script>
+</body>

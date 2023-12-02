@@ -1,0 +1,24 @@
+﻿@model SchoolDbAssignmnet.Models.Teacher
+
+@{
+    ViewBag.Title = "Show";
+} 
+
+
+<nav style="margin-bottom:30px; overflow:hidden;">
+    <a style="float:left"   class="navlink" href="/Teacher/List">Back to Teachers</a>
+    <a style="float:right; color:darkred" class="dellink" href="/Teacher/DeleteConfirm/@Model.TeacherId">Delete</a>
+</nav>
+
+<div class="teacher-detail">
+    <h2>Teacher Details</h2>
+    <h4>@Model.TeacherName</h4>
+    <p>Salary: $@Model.Salary</p>
+    <p>HireDate: @Model.HireDate.ToString("dd-MMM-yyyy")</p>
+    <h4>Course</h4>
+    <p> @Model.ClassName</p>
+
+</div>
+
+
+
