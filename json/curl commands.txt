@@ -1,0 +1,10 @@
+//general command:
+
+curl -H "Content-Type: application/json" -d "{\"TeacherFname\": \"Lily\", \"TeacherLname\": \"Aldrin\", \"EmpNumber\": \"T117\", \"Salary\": \"49.67\"}" http://localhost:50188/api/TeacherData/AddTeacher
+
+//json command:
+//Make sure to add the right path for the file
+// Make changes to the localhost:digits
+// Should add Ray Singh to the Teachers List
+
+curl -H "Content-Type: application/json" -d @newteacher.json http://localhost:64483/api/TeacherData/AddTeacher
